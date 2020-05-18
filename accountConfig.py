@@ -1,0 +1,3 @@
+ENDPOINT = "https://paper-api.alpaca.markets"
+KEY = "PK50H86SZNX88CSNYDJG"
+SECRET_KEY = "MaLANI9kVvjs5JkIMY5sYdVIyWDAT5eAdILxRtj9"
