@@ -1,12 +1,12 @@
 import sys
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtWidgets import QMainWindow, QInputDialog
 from ui_main import Ui_MainWindow
 from simpleBot import *
 
-class MainWindow:
+class MainWindow(QWidget):
 
-    def __init__(self):
+    def __init__(self, parent = None):
         self.main_win = QMainWindow()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.main_win)
@@ -19,8 +19,10 @@ class MainWindow:
     def on_MAKEMONEY_click(self):
 
         # test:
-        self.ui.OutputText.setText("POGGERS")
+        text, ok = QInputDialog.getText(self, 'Text Input Dialog', 'Stock symbol:')
 
+        self.ui.OutputText.setText("POGGERS")
+        print(text)
         # Check for non empty inputs for symbol and margins
         ####################
 
