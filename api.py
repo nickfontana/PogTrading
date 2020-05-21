@@ -1,6 +1,7 @@
 import requests
 import json
 import alpaca_trade_api as tradeapi
+#from googlefinance import getQuotes
 from accountConfig import KEY, SECRET_KEY, ENDPOINT
 
 ACCOUNT_URL = "{}/v2/account".format(ENDPOINT)
@@ -10,8 +11,10 @@ ASSETS_URL = "{}/v2/assets".format(ENDPOINT)
 CLOCK_URL = "{}/v2/clock".format(ENDPOINT)
 PORTFOLIO_HISTORY_URL = "{}/v2/account/portfolio/history".format(ENDPOINT)
 HEADERS = {'APCA-API-KEY-ID': KEY, 'APCA-API-SECRET-KEY': SECRET_KEY}
-#r = requests.get(ACCOUNT_URL, headers=HEADERS)
-#print(json.loads(r.content))
+BARS_ENDPOINT = "https://data.alpaca.markets/v1"
+BARS_URL = "{}/bars/1Min".format(BARS_ENDPOINT)
+api_BARS = tradeapi.REST(KEY, SECRET_KEY, BARS_ENDPOINT)
+api = tradeapi.REST(KEY, SECRET_KEY, ENDPOINT)
 
 def make_order(symbol, qty, side, type, time_in_force):
     vals = {
@@ -35,7 +38,21 @@ def get_order_history():
     req = requests.get(ORDERS_URL, headers=HEADERS)
     return json.loads(req.content)
 
-#make_order("TSLA", 1, "buy", "market", "day")
-print(get_order_history())
+def get_current_stock_data(symbol):
+    #vals = {
+     #   "symbols": symbol,
+      #  "limit": 1,
+    #}
 
-print(get_positions())
+    #req = requests.get(BARS_URL, json=vals, headers=HEADERS)
+    #data = json.loads(req.content)
+    #return data
+    data = api.get_barset(symbol, '1Min', limit=1)[symbol]
+    return data[0].c
+
+#def get_avg_daily_fluctuation():
+
+
+
+
+#make_order("TSLA", 1, "buy", "market", "day")
