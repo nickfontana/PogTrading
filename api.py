@@ -38,7 +38,7 @@ def get_order_history():
     req = requests.get(ORDERS_URL, headers=HEADERS)
     return json.loads(req.content)
 
-def get_current_stock_data(symbol):
+def get_current_stock_price(symbol):
     #vals = {
      #   "symbols": symbol,
       #  "limit": 1,
