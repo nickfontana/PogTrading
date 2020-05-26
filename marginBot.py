@@ -1,6 +1,8 @@
 import time
+#from contextlib import contextmanager
 from api import *
 
+#@contextmanager
 def marginBot(stock, margins):
     qty = 1
     buying, selling = True, True
