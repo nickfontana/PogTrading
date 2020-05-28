@@ -2,6 +2,8 @@ import time
 #from contextlib import contextmanager
 from api import *
 
+# change to just use buy/sell limits
+
 #@contextmanager
 def marginBot(stock, margins):
     qty = 1
