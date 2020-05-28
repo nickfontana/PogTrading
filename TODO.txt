@@ -1,0 +1,2 @@
+- marginBot.py : change to use buy/sell limits instead of while loop
+- model.py : implement lstm network
