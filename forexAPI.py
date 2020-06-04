@@ -33,18 +33,21 @@ def ADR(base, quote, time_period):
         "granularity": "D",
         "from": start,
         "to": end,
+        "price": 'M'
     }
     req = instruments.InstrumentsCandles(instrument=instrumentName, params=params)
     data = api.request(req)
     candles = data['candles']
     total_change, high_change, low_change = 0, 0, 0
+    today = candles[len(candles)-1]
+    todays_open = today['mid']['o']
     for candle in candles:
         high = float(candle['mid']['h'])
         low = float(candle['mid']['l'])
         open = float(candle['mid']['o'])
         total_change += (high-low)/open
         high_change += (high-open)/open
-        low_change += (low-open)/open
+        low_change += (open-low)/open
 
     avg_daily_range = total_change/time_period
     avg_high_range = high_change/time_period
@@ -52,7 +55,8 @@ def ADR(base, quote, time_period):
     avgs = {
         'avg_daily_range': avg_daily_range*100,
         'avg_high': avg_high_range*100,
-        'avg_low': avg_low_range*100
+        'avg_low': avg_low_range*100,
+        'recent_open': todays_open
     }
     return avgs
     # get candlesticks
@@ -60,7 +64,7 @@ def ADR(base, quote, time_period):
     # calc avg daily range
 
 
-def get_account_summary():
+def GET_ACCOUNT_SUMMARY():
     s = account.AccountSummary(accountID=ACCOUNT_ID)
     summary = api.request(s)
     return summary
