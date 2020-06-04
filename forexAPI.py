@@ -37,15 +37,24 @@ def ADR(base, quote, time_period):
     req = instruments.InstrumentsCandles(instrument=instrumentName, params=params)
     data = api.request(req)
     candles = data['candles']
-    percent_change = 0
+    total_change, high_change, low_change = 0, 0, 0
     for candle in candles:
         high = float(candle['mid']['h'])
         low = float(candle['mid']['l'])
         open = float(candle['mid']['o'])
-        percent_change += (high-low)/open
+        total_change += (high-low)/open
+        high_change += (high-open)/open
+        low_change += (low-open)/open
 
-    avg_daily_range = percent_change/time_period
-    return avg_daily_range*100
+    avg_daily_range = total_change/time_period
+    avg_high_range = high_change/time_period
+    avg_low_range = low_change/time_period
+    avgs = {
+        'avg_daily_range': avg_daily_range*100,
+        'avg_high': avg_high_range*100,
+        'avg_low': avg_low_range*100
+    }
+    return avgs
     # get candlesticks
     # calc daily ranges
     # calc avg daily range
@@ -57,4 +66,27 @@ def get_account_summary():
     return summary
 
 
-print(ADR('eur', 'usd', 14))
+# places a market buy order for @units units of @instrument at price @buy
+# places a stop loss at price @sell
+def PLACE_LIMIT_ORDER(instrument, units, buy, sell):
+    params = {
+        "order": {
+            "type": 'LIMIT',
+            "instrument": instrument,
+            "units": units,
+            "price": buy,
+            "stopLossOnFill": {
+                "timeInForce": 'GTC',
+                "price": sell
+            },
+            "timeInForce": 'GTC',
+            "positionFill": 'DEFAULT',
+            "triggerCondition": 'DEFAULT'
+        }
+     }
+    req = orders.OrderCreate(accountID=ACCOUNT_ID, data=params)
+    api.request(req)
+
+
+
+#print(ADR('eur', 'usd', 14))
