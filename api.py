@@ -54,5 +54,4 @@ def get_current_stock_price(symbol):
 
 
 
-
 #make_order("TSLA", 1, "buy", "market", "day")
