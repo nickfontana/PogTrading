@@ -64,10 +64,35 @@ def ADR(base, quote, time_period):
     # calc avg daily range
 
 
+def GET_CURRENT_PRICE(instrument):
+    #time = datetime.now()
+    #time = str(time).replace(" ", "T") + "Z"
+    params = {
+        "granularity": "S5",
+        #"from": time,
+        #"to": time,
+        "price": 'M',
+        "count": 1
+    }
+    req = instruments.InstrumentsCandles(instrument=instrument, params=params)
+    data = api.request(req)
+    price = data['candles'][0]['mid']['o']
+    return price
+
+
 def GET_ACCOUNT_SUMMARY():
-    s = account.AccountSummary(accountID=ACCOUNT_ID)
-    summary = api.request(s)
+    req = account.AccountSummary(accountID=ACCOUNT_ID)
+    summary = api.request(req)
     return summary
+
+
+def CURRENTLY_OWNED(instrument):
+    req = account.AccountDetails(accountID=ACCOUNT_ID)
+    details = api.request(req)['account']
+    for position in details['positions']:
+        if position['instrument'] == instrument:
+            return True
+    return False
 
 
 # places a market buy order for @units units of @instrument at price @buy

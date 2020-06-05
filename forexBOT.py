@@ -19,16 +19,26 @@ def bot():
     averages = {
         'EUR_USD': ADR('eur', 'usd', n),
         'USD_JPY': ADR('usd', 'jpy', n),
-        'GBP_USB': ADR('gbp', 'usd', n),
+        'GBP_USD': ADR('gbp', 'usd', n),
         'AUD_USD': ADR('aud', 'usd', n),
         'USD_CAD': ADR('usd', 'cad', n),
         'EUR_JPY': ADR('eur', 'jpy', n),
         'NZD_USD': ADR('nzd', 'usd', n)
     }
+
     while not done:
         summary = GET_ACCOUNT_SUMMARY()['account']
         if float(summary['marginAvailable']) <= 1:
             return
+        for instrument in averages.keys():
+            currPrice = GET_CURRENT_PRICE(instrument)
+            if currPrice <= averages[instrument]['recent_open']*(1-averages[instrument]['avg_low']):
+                if not CURRENTLY_OWNED():
+                    #  TODO: PLACE ORDER
+                    done = True
+
+
+
         # check prices of all pairs that aren't already owned
         # if price <= open*(1-low) :
         #   units = 25% of buying power worth
@@ -40,7 +50,7 @@ def bot():
 
 def main():
     bot()
-
+    #print(GET_CURRENT_PRICE('EUR_USD'))
 
 if __name__ == '__main__':
     main()
