@@ -28,14 +28,23 @@ def bot():
 
     while not done:
         summary = GET_ACCOUNT_SUMMARY()['account']
-        if float(summary['marginAvailable']) <= 1:
+        buying_power = float(summary['marginAvailable'])
+        if buying_power <= 100:
             return
         for instrument in averages.keys():
-            currPrice = GET_CURRENT_PRICE(instrument)
-            if currPrice <= averages[instrument]['recent_open']*(1-averages[instrument]['avg_low']):
-                if not CURRENTLY_OWNED():
-                    #  TODO: PLACE ORDER
+            print("Checking " + str(instrument + " ...\n"))
+            currPrice = round(GET_CURRENT_PRICE(instrument), 5)
+            todays_open = round(averages[instrument]['recent_open'], 5)
+            sell_point = round(todays_open*(1+averages[instrument]['avg_high']), 3)
+            buy_point = round(todays_open*(1-averages[instrument]['avg_low']), 3)
+            print(todays_open)
+            print(currPrice)
+            if currPrice <= buy_point:
+                if not CURRENTLY_OWNED(instrument):
+                    units = int((buying_power/4)/currPrice)
+                    PLACE_LIMIT_ORDER(instrument, units, buy_point, sell_point)
                     done = True
+                    return
 
 
 
@@ -44,8 +53,6 @@ def bot():
         #   units = 25% of buying power worth
         #   PLACE_LIMIT_ORDER(instrument, units, open*(1-low), open*(1+high))
 
-    #PLACE_LIMIT_ORDER('EUR_USD', 1, 1.0, 1.1)
-    #print(averages['USD_JPY'])
 
 
 def main():

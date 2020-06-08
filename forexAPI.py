@@ -40,7 +40,7 @@ def ADR(base, quote, time_period):
     candles = data['candles']
     total_change, high_change, low_change = 0, 0, 0
     today = candles[len(candles)-1]
-    todays_open = today['mid']['o']
+    todays_open = float(today['mid']['o'])
     for candle in candles:
         high = float(candle['mid']['h'])
         low = float(candle['mid']['l'])
@@ -49,13 +49,13 @@ def ADR(base, quote, time_period):
         high_change += (high-open)/open
         low_change += (open-low)/open
 
-    avg_daily_range = total_change/time_period
-    avg_high_range = high_change/time_period
-    avg_low_range = low_change/time_period
+    avg_daily_range = float(total_change/time_period)
+    avg_high_range = float(high_change/time_period)
+    avg_low_range = float(low_change/time_period)
     avgs = {
-        'avg_daily_range': avg_daily_range*100,
-        'avg_high': avg_high_range*100,
-        'avg_low': avg_low_range*100,
+        'avg_daily_range': avg_daily_range,
+        'avg_high': avg_high_range,
+        'avg_low': avg_low_range,
         'recent_open': todays_open
     }
     return avgs
@@ -77,7 +77,7 @@ def GET_CURRENT_PRICE(instrument):
     req = instruments.InstrumentsCandles(instrument=instrument, params=params)
     data = api.request(req)
     price = data['candles'][0]['mid']['o']
-    return price
+    return float(price)
 
 
 def GET_ACCOUNT_SUMMARY():
@@ -103,10 +103,10 @@ def PLACE_LIMIT_ORDER(instrument, units, buy, sell):
             "type": 'LIMIT',
             "instrument": instrument,
             "units": units,
-            "price": buy,
-            "stopLossOnFill": {
+            "price": str(buy),
+            "takeProfitOnFill": {
                 "timeInForce": 'GTC',
-                "price": sell
+                "price": str(sell),
             },
             "timeInForce": 'GTC',
             "positionFill": 'DEFAULT',
@@ -115,7 +115,8 @@ def PLACE_LIMIT_ORDER(instrument, units, buy, sell):
      }
     req = orders.OrderCreate(accountID=ACCOUNT_ID, data=params)
     api.request(req)
+    print("-----Order placed-----\n" + str(units) + " units of " + str(instrument) + "\n" + "Buy: " + str(buy) + "\n" + "Sell: " + str(sell) + "\n")
 
 
 
-#print(ADR('eur', 'usd', 14))
+
