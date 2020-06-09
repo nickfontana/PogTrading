@@ -1,4 +1,5 @@
-import multiprocessing
+import time
+from threading import Timer, Event
 from forexAPI import *
 
 
@@ -42,9 +43,14 @@ def bot():
             if currPrice <= buy_point:
                 if not CURRENTLY_OWNED(instrument):
                     units = int((buying_power/4)/currPrice)
-                    PLACE_LIMIT_ORDER(instrument, units, buy_point, sell_point)
+                    # IMPORTANT: units set to 1 for testing
+                    # TODO: change @param units=units
+                    PLACE_LIMIT_ORDER(instrument, 1, buy_point, sell_point)
                     done = True
                     return
+        # set to 5 second delay for testing
+        # TODO: change to 5 minutes
+        time.sleep(5)
 
 
 
@@ -56,8 +62,11 @@ def bot():
 
 
 def main():
-    bot()
-    #print(GET_CURRENT_PRICE('EUR_USD'))
+    # unnecessary unless another thread is added.. keep for now
+    event = Event()
+    Timer(1, bot).start()
+    event.set()
 
+    
 if __name__ == '__main__':
     main()
