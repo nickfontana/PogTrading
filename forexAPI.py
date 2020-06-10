@@ -1,6 +1,6 @@
 import json
 import requests
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import oandapyV20
 import oandapyV20.endpoints.orders as orders
 import oandapyV20.endpoints.instruments as instruments
@@ -20,9 +20,11 @@ ORDERS_URL = ENDPOINT + "/v3/accounts/" + ACCOUNT_ID + "/orders"
 
 api = oandapyV20.API(access_token=TOKEN)
 
+
 # calculates average daily range
 # @param time_period: range of time in days
-def ADR(base, quote, time_period):
+# @param granularity: "D" for daily starting at 9pm cst, "H4" for 4 hour candles
+def ADR(base, quote, time_period, precision):
     base = base.upper()
     quote = quote.upper()
     instrumentName = base + "_" + quote
@@ -39,9 +41,11 @@ def ADR(base, quote, time_period):
     data = api.request(req)
     candles = data['candles']
     total_change, high_change, low_change = 0, 0, 0
-    today = candles[len(candles)-1]
-    todays_open = float(today['mid']['o'])
+    #@TODO: fix recent_open (daily candles that aren't complete aren't included)
+    #today = candles[len(candles)-1]
+    todays_open = float(GET_RECENT_OPEN(instrumentName))
     for candle in candles:
+        #print(candle['time'])
         high = float(candle['mid']['h'])
         low = float(candle['mid']['l'])
         open = float(candle['mid']['o'])
@@ -56,13 +60,21 @@ def ADR(base, quote, time_period):
         'avg_daily_range': avg_daily_range,
         'avg_high': avg_high_range,
         'avg_low': avg_low_range,
-        'recent_open': todays_open
+        'todays_open': todays_open,
+        'precision': precision
     }
     return avgs
-    # get candlesticks
-    # calc daily ranges
-    # calc avg daily range
 
+
+def GET_RECENT_OPEN(instrument):
+    params = {
+        "granularity": "S30",
+        "price": "M",
+        "count": 1,
+    }
+    req = instruments.InstrumentsCandles(instrument=instrument, params=params)
+    data = api.request(req)
+    return float(data['candles'][0]['mid']['o'])
 
 def GET_CURRENT_PRICE(instrument):
     #time = datetime.now()
@@ -71,7 +83,7 @@ def GET_CURRENT_PRICE(instrument):
         "granularity": "S5",
         #"from": time,
         #"to": time,
-        "price": 'M',
+        "price": "M",
         "count": 1
     }
     req = instruments.InstrumentsCandles(instrument=instrument, params=params)
@@ -118,5 +130,6 @@ def PLACE_LIMIT_ORDER(instrument, units, buy, sell):
     print("-----Order placed-----\n" + str(units) + " units of " + str(instrument) + "\n" + "Buy: " + str(buy) + "\n" + "Sell: " + str(sell) + "\n")
 
 
-
-
+if __name__ == '__main__':
+    print(ADR('eur', 'usd', 3, 5))
+    #print(GET_RECENT_OPEN("EUR_JPY"))
