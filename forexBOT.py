@@ -1,5 +1,6 @@
 import time
 import schedule
+from datetime import datetime
 from threading import Timer, Event
 from forexAPI import *
 
@@ -22,9 +23,11 @@ from forexAPI import *
 
 
 def bot():
+    print("Starting...")
     n = 14
-    done = False
     runtime = 0
+    if datetime.today().weekday() == 3:
+        runtime = 360
     averages = {
         'EUR_USD': ADR('eur', 'usd', n, 5),
         'USD_JPY': ADR('usd', 'jpy', n, 3),
@@ -34,13 +37,21 @@ def bot():
         'EUR_JPY': ADR('eur', 'jpy', n, 3),
         'NZD_USD': ADR('nzd', 'usd', n, 5)
     }
-    while not done:
+
+    # For testing instance log; delete eventually
+    for instrument in averages.keys():
+        print(instrument, "OPEN:")
+        precision = averages[instrument]['precision']
+        print(round(averages[instrument]['todays_open'], precision),"\n")
+    
+    while True:
         if runtime >= 1435:
+            print("End of day... restarting")
             return
         summary = GET_ACCOUNT_SUMMARY()['account']
         buying_power = float(summary['marginAvailable'])
         if buying_power <= 100:
-            done = True
+            print("Buying power low... exiting")
             return
         for instrument in averages.keys():
             #print("Checking " + str(instrument + " ...\n"))
@@ -49,18 +60,23 @@ def bot():
             currPrice = round(GET_CURRENT_PRICE(instrument), precision)
             sell_point = round(todays_open*(1+averages[instrument]['avg_high']), precision)
             buy_point = round(todays_open*(1-averages[instrument]['avg_low']), precision)
-            # print(todays_open)
-            # print(currPrice)
+            #print(todays_open)
+            #print(currPrice)
             if currPrice <= buy_point:
                 if not CURRENTLY_OWNED(instrument):
                     units = int((buying_power/4)/currPrice)
-                    # units set to 1 for testing
                     PLACE_LIMIT_ORDER(instrument, units, buy_point, sell_point)
         time.sleep(5)
         runtime += 5
 
 
-schedule.every().day.at('21:01').do(bot)
+schedule.every().sunday.at('21:01').do(bot)
+schedule.every().monday.at('21:01').do(bot)
+schedule.every().tuesday.at('21:01').do(bot)
+schedule.every().wednesday.at('21:01').do(bot)
+schedule.every().thursday.at('21:01').do(bot)
+
+
 
 
 def main():
@@ -71,7 +87,6 @@ def main():
     while True:
         schedule.run_pending()
         time.sleep(5)
-
 
 if __name__ == '__main__':
     main()
