@@ -77,6 +77,13 @@ schedule.every().wednesday.at('21:01').do(bot)
 schedule.every().thursday.at('21:01').do(bot)
 
 
+def test_():
+    n = 0
+    while True:
+        print(n, 'BUYING')
+        PLACE_LIMIT_ORDER('EUR_USD', 1, '1.2645', '1.2660')
+        n += 1
+        time.sleep(10)
 
 
 def main():
