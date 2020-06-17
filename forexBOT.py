@@ -5,12 +5,7 @@ from threading import Timer, Event
 from forexAPI import *
 
 
-# thread 1:
-# check buying power flag
-# remove any current positions from dictionary of pairs
-# periodically check current price and buy based on ADR
-# on order enable current positions flag
-# on order set sell limit
+# nohup python3 -u forexBOT.py > output.log &
 
 
 # EURUSD / USDJPY / GBPUSD / AUDUSD / USDCAD / EUR/JPY / NZD/USD
@@ -45,7 +40,7 @@ def bot():
         print(round(averages[instrument]['todays_open'], precision),"\n")
     
     while True:
-        if runtime >= 1435:
+        if runtime >= 86340:
             print("End of day... restarting")
             return
         summary = GET_ACCOUNT_SUMMARY()['account']
@@ -93,7 +88,7 @@ def main():
     #event.set()
     while True:
         schedule.run_pending()
-        time.sleep(5)
+        time.sleep(10)
 
 if __name__ == '__main__':
     main()
