@@ -127,7 +127,8 @@ def PLACE_LIMIT_ORDER(instrument, units, buy, sell):
      }
     req = orders.OrderCreate(accountID=ACCOUNT_ID, data=params)
     api.request(req)
-    print("-----Order placed-----\n" + str(units) + " units of " + str(instrument) + "\n" + "Buy: " + str(buy) + "\n" + "Sell: " + str(sell) + "\n")
+    date = datetime.now().strftime("%Y-%m-%d %H:%M")
+    print("-----Order placed-----\n",str(date),"\n",str(units)," units of ",str(instrument),"\nBuy: ",str(buy),"\nSell: ",str(sell),"\n")
 
 
 if __name__ == '__main__':

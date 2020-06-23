@@ -1,0 +1,205 @@
+Starting...
+EUR_USD OPEN:
+1.12049 
+
+USD_JPY OPEN:
+106.975 
+
+GBP_USD OPEN:
+1.24223 
+
+AUD_USD OPEN:
+0.68526 
+
+USD_CAD OPEN:
+1.35988 
+
+EUR_JPY OPEN:
+119.869 
+
+NZD_USD OPEN:
+0.64286 
+
+-----Order placed-----
+20261 units of GBP_USD
+Buy: 1.23655
+Sell: 1.24623
+
+-----Order placed-----
+18265 units of USD_CAD
+Buy: 1.35555
+Sell: 1.36462
+
+Traceback (most recent call last):
+  File "forexBOT.py", line 94, in <module>
+    main()
+  File "forexBOT.py", line 90, in main
+    schedule.run_pending()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/schedule/__init__.py", line 563, in run_pending
+    default_scheduler.run_pending()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/schedule/__init__.py", line 94, in run_pending
+    self._run_job(job)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/schedule/__Starting...
+EUR_USD OPEN:
+1.11822 
+
+USD_JPY OPEN:
+106.802 
+
+GBP_USD OPEN:
+1.23458 
+
+AUD_USD OPEN:
+0.6812 
+
+USD_CAD OPEN:
+1.36136 
+
+EUR_JPY OPEN:
+119.462 
+
+NZD_USD OPEN:
+0.63832 
+
+End of day... restarting
+Starting...
+EUR_USD OPEN:
+1.12614 
+
+USD_JPY OPEN:
+106.906 
+
+GBP_USD OPEN:
+1.24701 
+
+AUD_USD OPEN:
+0.69088 
+
+USD_CAD OPEN:
+1.35222 
+
+EUR_JPY OPEN:
+120.394 
+
+NZD_USD OPEN:
+0.64798 
+
+End of day... restarting
+ite-packages/oandapyV20/oandapyV20.py", line 306, in request
+    request_args, headers=headers)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/oandapyV20/oandapyV20.py", line 243, in __request
+    response.content.decode('utf-8'))
+oandapyV20.exceptions.V20Error: <!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="refresh" content="0">
+
+<title>api-fxpractice.oanda.com | 520: Web server is returning an unknown error</title>
+<meta charset="UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="robots" content="noindex, nofollow" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" id="cf_styles-css" href="/cdn-cgi/styles/cf.errors.css" type="text/css" media="screen,projection" />
+<!--[if lt IE 9]><link rel="stylesheet" id='cf_styles-ie-css' href="/cdn-cgi/styles/cf.errors.ie.css" type="text/css" media="screen,projection" /><![endif]-->
+<style type="text/css">body{margin:0;padding:0}</style>
+
+
+
+
+</head>
+<body>
+<div id="cf-wrapper">
+
+    
+
+    <div id="cf-error-details" class="cf-error-details-wrapper">
+        <div class="cf-wrapper cf-error-overview">
+            <h1>
+              
+              <span class="cf-error-type">Error</span>
+              <span class="cf-error-code">520</span>
+              <small class="heading-ray-id">Ray ID: 5a60830a3d9aea1c &bull; 2020-06-19 21:59:31 UTC</small>
+            </h1>
+            <h2 class="cf-subheadline">Web server is returning an unknown error</h2>
+        </div><!-- /.error-overview -->
+        
+        <div class="cf-section cf-highlight cf-status-display">
+            <div class="cf-wrapper">
+                <div class="cf-columns cols-3">
+                  
+<div id="cf-browser-status" class="cf-column cf-status-item cf-browser-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-browser"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc">You</span>
+  <h3 class="cf-status-name">Browser</h3>
+  <span class="cf-status-label">Working</span>
+</div>
+
+<div id="cf-cloudflare-status" class="cf-column cf-status-item cf-cloudflare-status ">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-cloud"></i>
+    <i class="cf-icon-status cf-icon-ok"></i>
+  </div>
+  <span class="cf-status-desc">Ashburn</span>
+  <h3 class="cf-status-name">Cloudflare</h3>
+  <span class="cf-status-label">Working</span>
+</div>
+
+<div id="cf-host-status" class="cf-column cf-status-item cf-host-status cf-error-source">
+  <div class="cf-icon-error-container">
+    <i class="cf-icon cf-icon-server"></i>
+    <i class="cf-icon-status cf-icon-error"></i>
+  </div>
+  <span class="cf-status-desc">api-fxpractice.oanda.com</span>
+  <h3 class="cf-status-name">Host</h3>
+  <span class="cf-status-label">Error</span>
+</div>
+
+                </div>
+              
+            </div>
+        </div><!-- /.status-display -->
+
+        <div class="cf-section cf-wrapper">
+            <div class="cf-columns two">
+                <div class="cf-column">
+                    <h2>What happened?</h2>
+                    <p>There is an unknown connection issue between Cloudflare and the origin web server. As a result, the web page can not be displayed.</p>
+                </div>
+              
+                <div class="cf-column">
+                    <h2>What can I do?</h2>
+                          <h5>If you are a visitor of this website:</h5>
+      <p>Please try again in a few minutes.</p>
+
+      <h5>If you are the owner of this website:</h5>
+      <p><span>There is an issue between Cloudflare's cache and your origin web server. Cloudflare monitors for these errors and automatically investigates the cause. To help support the investigation, you can pull the corresponding error log from your web server and submit it our support team.  Please include the Ray ID (which is at the bottom of this error page).</span> <a href="https://support.cloudflare.com/hc/en-us/articles/200171936-Error-520">Additional troubleshooting resources</a>.</p>
+                </div>
+            </div>
+              
+        </div><!-- /.section -->
+
+        <div class="cf-error-footer cf-wrapper">
+  <p>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>5a60830a3d9aea1c</strong></span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span>Your IP</span>: 34.229.255.133</span>
+    <span class="cf-footer-separator">&bull;</span>
+    <span class="cf-footer-item"><span>Performance &amp; security by</span> <a href="https://www.cloudflare.com/5xx-error-landing?utm_source=error_footer" id="brand_link" target="_blank">Cloudflare</a></span>
+    
+  </p>
+</div><!-- /.error-footer -->
+
+
+    </div><!-- /#cf-error-details -->
+</div><!-- /#cf-wrapper -->
+</body>
+</html>
+
+

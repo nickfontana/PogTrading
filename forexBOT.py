@@ -18,11 +18,11 @@ from forexAPI import *
 
 
 def bot():
-    print("Starting...")
-    n = 14
+    print("Starting...\n")
+    n = 7
     runtime = 0
     if datetime.today().weekday() == 3:
-        runtime = 360
+        runtime = 21540
     averages = {
         'EUR_USD': ADR('eur', 'usd', n, 5),
         'USD_JPY': ADR('usd', 'jpy', n, 3),
@@ -34,11 +34,11 @@ def bot():
     }
 
     # For testing instance log; delete eventually
+    print(datetime.now().strftime("%Y-%m-%d %H:%M"))
     for instrument in averages.keys():
         print(instrument, "OPEN:")
         precision = averages[instrument]['precision']
         print(round(averages[instrument]['todays_open'], precision),"\n")
-    
     while True:
         if runtime >= 86340:
             print("End of day... restarting")
@@ -53,8 +53,8 @@ def bot():
             precision = averages[instrument]['precision']
             todays_open = round(averages[instrument]['todays_open'], precision)
             currPrice = round(GET_CURRENT_PRICE(instrument), precision)
-            sell_point = round(todays_open*(1+averages[instrument]['avg_high']), precision)
-            buy_point = round(todays_open*(1-averages[instrument]['avg_low']), precision)
+            sell_point = round(todays_open*(1+(0.5*averages[instrument]['avg_high'])), precision)
+            buy_point = round(todays_open*(1-(0.5*averages[instrument]['avg_low'])), precision)
             #print(todays_open)
             #print(currPrice)
             if currPrice <= buy_point:
