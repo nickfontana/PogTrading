@@ -40,10 +40,11 @@ def bot():
         precision = averages[instrument]['precision']
         print(round(averages[instrument]['todays_open'], precision),"\n")
     while True:
-        if datetime.now().hour == 21:
-            print("End of day... restarting")
-            print(datetime.now().strftime("%Y-%m-%d %H:%M"))
-            return
+        if datetime.now().hour == 20:
+            if datetime.now().minute == 59:
+                print("End of day... restarting")
+                print(datetime.now().strftime("%Y-%m-%d %H:%M"))
+                return
         if runtime >= 86340:
             print("End of day... restarting")
             return
