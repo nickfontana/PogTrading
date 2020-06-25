@@ -40,6 +40,10 @@ def bot():
         precision = averages[instrument]['precision']
         print(round(averages[instrument]['todays_open'], precision),"\n")
     while True:
+        if datetime.now().hour == 21:
+            print("End of day... restarting")
+            print(datetime.now().strftime("%Y-%m-%d %H:%M"))
+            return
         if runtime >= 86340:
             print("End of day... restarting")
             return
@@ -62,7 +66,7 @@ def bot():
                     units = int((buying_power/4)/currPrice)
                     PLACE_LIMIT_ORDER(instrument, units, buy_point, sell_point)
         time.sleep(5)
-        runtime += 5
+        #runtime += 5
 
 
 schedule.every().sunday.at('21:01').do(bot)
