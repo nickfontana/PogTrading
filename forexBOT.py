@@ -45,9 +45,9 @@ def bot():
                 print("End of day... restarting")
                 print(datetime.now().strftime("%Y-%m-%d %H:%M"))
                 return
-        if runtime >= 86340:
-            print("End of day... restarting")
-            return
+        #if runtime >= 86340:
+         #   print("End of day... restarting")
+          #  return
         summary = GET_ACCOUNT_SUMMARY()['account']
         buying_power = float(summary['marginAvailable'])
         if buying_power <= 100:
@@ -60,10 +60,10 @@ def bot():
             currPrice = round(GET_CURRENT_PRICE(instrument), precision)
             sell_point = round(todays_open*(1+(0.5*averages[instrument]['avg_high'])), precision)
             buy_point = round(todays_open*(1-(0.5*averages[instrument]['avg_low'])), precision)
-            #print(todays_open)
-            #print(currPrice)
             if currPrice <= buy_point:
+                print(str(instrument),"current: ",str(currPrice),"\n","buy: ",str(buy_point),"\n","sell: ",str(sell_point))
                 if not CURRENTLY_OWNED(instrument):
+                    print("should buy...")
                     units = int((buying_power/4)/currPrice)
                     PLACE_LIMIT_ORDER(instrument, units, buy_point, sell_point)
         time.sleep(5)
