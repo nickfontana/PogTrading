@@ -62,10 +62,12 @@ def bot():
             buy_point = round(todays_open*(1-(0.5*averages[instrument]['avg_low'])), precision)
             if currPrice <= buy_point:
                 print(str(instrument),"current: ",str(currPrice),"\n","buy: ",str(buy_point),"\n","sell: ",str(sell_point))
-                if not CURRENTLY_OWNED(instrument):
+                #if not CURRENTLY_OWNED(instrument):
                     print("should buy...")
                     units = int((buying_power/4)/currPrice)
                     PLACE_LIMIT_ORDER(instrument, units, buy_point, sell_point)
+                    del averages[instrument]
+                    break
         time.sleep(5)
         #runtime += 5
 
