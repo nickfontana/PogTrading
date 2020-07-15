@@ -1,91 +1,617 @@
 Starting...
+
+2020-07-05 21:01
 EUR_USD OPEN:
-1.12049 
+1.12459 
 
 USD_JPY OPEN:
-106.975 
+107.467 
 
 GBP_USD OPEN:
-1.24223 
+1.24722 
 
 AUD_USD OPEN:
-0.68526 
+0.69323 
 
 USD_CAD OPEN:
-1.35988 
+1.35643 
 
 EUR_JPY OPEN:
-119.869 
+120.894 
 
 NZD_USD OPEN:
-0.64286 
+0.65253 
 
+USD_CAD current:  1.355 
+ buy:  1.35504 
+ sell:  1.35749
+should buy...
 -----Order placed-----
-20261 units of GBP_USD
-Buy: 1.23655
-Sell: 1.24623
+ 2020-07-05 22:35 
+ 18561  units of  USD_CAD 
+Buy:  1.35504 
+Sell:  1.35749 
 
+USD_JPY current:  107.394 
+ buy:  107.397 
+ sell:  107.588
+should buy...
 -----Order placed-----
-18265 units of USD_CAD
-Buy: 1.35555
-Sell: 1.36462
+ 2020-07-06 17:46 
+ 233  units of  USD_JPY 
+Buy:  107.397 
+Sell:  107.588 
+
+End of day... restarting
+2020-07-06 20:59
+Starting...
+
+2020-07-06 21:01
+EUR_USD OPEN:
+1.13086 
+
+USD_JPY OPEN:
+107.399 
+
+GBP_USD OPEN:
+1.2492 
+
+AUD_USD OPEN:
+0.69737 
+
+USD_CAD OPEN:
+1.35408 
+
+EUR_JPY OPEN:
+121.44 
+
+NZD_USD OPEN:
+0.65541 
+
+NZD_USD current:  0.65473 
+ buy:  0.655 
+ sell:  0.65693
+should buy...
+-----Order placed-----
+ 2020-07-06 21:02 
+ 38262  units of  NZD_USD 
+Buy:  0.655 
+Sell:  0.65693 
+
+USD_JPY current:  107.318 
+ buy:  107.322 
+ sell:  107.487
+should buy...
+-----Order placed-----
+ 2020-07-07 00:07 
+ 233  units of  USD_JPY 
+Buy:  107.322 
+Sell:  107.487 
+
+USD_CAD current:  1.35258 
+ buy:  1.35259 
+ sell:  1.35495
+should buy...
+-----Order placed-----
+ 2020-07-07 00:40 
+ 18518  units of  USD_CAD 
+Buy:  1.35259 
+Sell:  1.35495 
+
+AUD_USD current:  0.69672 
+ buy:  0.69677 
+ sell:  0.69884
+should buy...
+-----Order placed-----
+ 2020-07-07 02:32 
+ 35840  units of  AUD_USD 
+Buy:  0.69677 
+Sell:  0.69884 
+
+EUR_USD current:  1.12978 
+ buy:  1.12978 
+ sell:  1.13247
+should buy...
+-----Order placed-----
+ 2020-07-07 06:13 
+ 21834  units of  EUR_USD 
+Buy:  1.12978 
+Sell:  1.13247 
+
+GBP_USD current:  1.24823 
+ buy:  1.24825 
+ sell:  1.25154
+should buy...
+-----Order placed-----
+ 2020-07-07 07:00 
+ 19659  units of  GBP_USD 
+Buy:  1.24825 
+Sell:  1.25154 
+
+EUR_JPY current:  121.313 
+ buy:  121.313 
+ sell:  121.616
+should buy...
+-----Order placed-----
+ 2020-07-07 08:58 
+ 200  units of  EUR_JPY 
+Buy:  121.313 
+Sell:  121.616 
+
+End of day... restarting
+2020-07-07 20:59
+Starting...
+
+2020-07-07 21:01
+EUR_USD OPEN:
+1.12751 
+
+USD_JPY OPEN:
+107.518 
+
+GBP_USD OPEN:
+1.25436 
+
+AUD_USD OPEN:
+0.6947 
+
+USD_CAD OPEN:
+1.36042 
+
+EUR_JPY OPEN:
+121.223 
+
+NZD_USD OPEN:
+0.65474 
+
+NZD_USD current:  0.65408 
+ buy:  0.65437 
+ sell:  0.65617
+should buy...
+-----Order placed-----
+ 2020-07-07 21:02 
+ 38006  units of  NZD_USD 
+Buy:  0.65437 
+Sell:  0.65617 
+
+AUD_USD current:  0.69388 
+ buy:  0.69398 
+ sell:  0.69601
+should buy...
+-----Order placed-----
+ 2020-07-08 00:00 
+ 35817  units of  AUD_USD 
+Buy:  0.69398 
+Sell:  0.69601 
+
+USD_CAD current:  1.35944 
+ buy:  1.35945 
+ sell:  1.36152
+should buy...
+-----Order placed-----
+ 2020-07-08 00:24 
+ 18160  units of  USD_CAD 
+Buy:  1.35945 
+Sell:  1.36152 
+
+EUR_USD current:  1.12638 
+ buy:  1.12641 
+ sell:  1.12911
+should buy...
+-----Order placed-----
+ 2020-07-08 06:12 
+ 21703  units of  EUR_USD 
+Buy:  1.12641 
+Sell:  1.12911 
+
+USD_JPY current:  107.434 
+ buy:  107.436 
+ sell:  107.606
+should buy...
+-----Order placed-----
+ 2020-07-08 07:20 
+ 226  units of  USD_JPY 
+Buy:  107.436 
+Sell:  107.606 
+
+GBP_USD current:  1.25351 
+ buy:  1.25351 
+ sell:  1.25669
+should buy...
+-----Order placed-----
+ 2020-07-08 08:32 
+ 19477  units of  GBP_USD 
+Buy:  1.25351 
+Sell:  1.25669 
+
+End of day... restarting
+2020-07-08 20:59
+Starting...
+
+2020-07-08 21:01
+EUR_USD OPEN:
+1.133 
+
+USD_JPY OPEN:
+107.259 
+
+GBP_USD OPEN:
+1.26097 
+
+AUD_USD OPEN:
+0.69802 
+
+USD_CAD OPEN:
+1.3512 
+
+EUR_JPY OPEN:
+121.518 
+
+NZD_USD OPEN:
+0.65752 
+
+NZD_USD current:  0.65715 
+ buy:  0.65717 
+ sell:  0.65898
+should buy...
+-----Order placed-----
+ 2020-07-08 21:06 
+ 38016  units of  NZD_USD 
+Buy:  0.65717 
+Sell:  0.65898 
+
+USD_JPY current:  107.191 
+ buy:  107.192 
+ sell:  107.341
+should buy...
+-----Order placed-----
+ 2020-07-09 00:17 
+ 234  units of  USD_JPY 
+Buy:  107.192 
+Sell:  107.341 
+
+AUD_USD current:  0.69732 
+ buy:  0.69733 
+ sell:  0.69932
+should buy...
+-----Order placed-----
+ 2020-07-09 01:15 
+ 35834  units of  AUD_USD 
+Buy:  0.69733 
+Sell:  0.69932 
+
+USD_CAD current:  1.34968 
+ buy:  1.34968 
+ sell:  1.35226
+should buy...
+-----Order placed-----
+ 2020-07-09 08:09 
+ 18679  units of  USD_CAD 
+Buy:  1.34968 
+Sell:  1.35226 
+
+EUR_USD current:  1.13207 
+ buy:  1.13214 
+ sell:  1.13485
+should buy...
+-----Order placed-----
+ 2020-07-09 09:08 
+ 22189  units of  EUR_USD 
+Buy:  1.13214 
+Sell:  1.13485 
+
+EUR_JPY current:  121.461 
+ buy:  121.461 
+ sell:  121.708
+should buy...
+-----Order placed-----
+ 2020-07-09 13:40 
+ 205  units of  EUR_JPY 
+Buy:  121.461 
+Sell:  121.708 
+
+GBP_USD current:  1.26014 
+ buy:  1.26015 
+ sell:  1.26322
+should buy...
+-----Order placed-----
+ 2020-07-09 15:07 
+ 19918  units of  GBP_USD 
+Buy:  1.26015 
+Sell:  1.26322 
+
+End of day... restarting
+2020-07-09 20:59
+Starting...
+
+2020-07-09 21:01
+EUR_USD OPEN:
+1.12855 
+
+USD_JPY OPEN:
+107.204 
+
+GBP_USD OPEN:
+1.26054 
+
+AUD_USD OPEN:
+0.69638 
+
+USD_CAD OPEN:
+1.35844 
+
+EUR_JPY OPEN:
+120.978 
+
+NZD_USD OPEN:
+0.65698 
+
+AUD_USD current:  0.6955 
+ buy:  0.69557 
+ sell:  0.69755
+should buy...
+-----Order placed-----
+ 2020-07-10 00:01 
+ 35638  units of  AUD_USD 
+Buy:  0.69557 
+Sell:  0.69755 
+
+NZD_USD current:  0.65644 
+ buy:  0.65648 
+ sell:  0.65819
+should buy...
+-----Order placed-----
+ 2020-07-10 00:07 
+ 37469  units of  NZD_USD 
+Buy:  0.65648 
+Sell:  0.65819 
+
+GBP_USD current:  1.25937 
+ buy:  1.25978 
+ sell:  1.26282
+should buy...
+-----Order placed-----
+ 2020-07-10 00:45 
+ 19373  units of  GBP_USD 
+Buy:  1.25978 
+Sell:  1.26282 
+
+EUR_JPY current:  120.872 
+ buy:  120.886 
+ sell:  121.158
+should buy...
+-----Order placed-----
+ 2020-07-10 00:45 
+ 199  units of  EUR_JPY 
+Buy:  120.886 
+Sell:  121.158 
+
+USD_JPY current:  107.129 
+ buy:  107.132 
+ sell:  107.275
+should buy...
+-----Order placed-----
+ 2020-07-10 00:49 
+ 224  units of  USD_JPY 
+Buy:  107.132 
+Sell:  107.275 
+
+EUR_USD current:  1.1275 
+ buy:  1.12755 
+ sell:  1.13032
+should buy...
+-----Order placed-----
+ 2020-07-10 00:50 
+ 21344  units of  EUR_USD 
+Buy:  1.12755 
+Sell:  1.13032 
+
+End of day... restarting
+2020-07-10 20:59
+Starting...
+
+2020-07-12 21:01
+EUR_USD OPEN:
+1.12998 
+
+USD_JPY OPEN:
+106.914 
+
+GBP_USD OPEN:
+1.26345 
+
+AUD_USD OPEN:
+0.69586 
+
+USD_CAD OPEN:
+1.35849 
+
+EUR_JPY OPEN:
+120.905 
+
+NZD_USD OPEN:
+0.65724 
+
+AUD_USD current:  0.69474 
+ buy:  0.69479 
+ sell:  0.6969
+should buy...
+-----Order placed-----
+ 2020-07-13 00:00 
+ 36095  units of  AUD_USD 
+Buy:  0.69479 
+Sell:  0.6969 
+
+GBP_USD current:  1.26259 
+ buy:  1.26259 
+ sell:  1.26612
+should buy...
+-----Order placed-----
+ 2020-07-13 00:02 
+ 19709  units of  GBP_USD 
+Buy:  1.26259 
+Sell:  1.26612 
+
+NZD_USD current:  0.6566 
+ buy:  0.6566 
+ sell:  0.65836
+should buy...
+-----Order placed-----
+ 2020-07-13 00:11 
+ 37410  units of  NZD_USD 
+Buy:  0.6566 
+Sell:  0.65836 
+
+USD_JPY current:  106.804 
+ buy:  106.804 
+ sell:  106.984
+should buy...
+-----Order placed-----
+ 2020-07-13 01:05 
+ 230  units of  USD_JPY 
+Buy:  106.804 
+Sell:  106.984 
+
+USD_CAD current:  1.357 
+ buy:  1.35703 
+ sell:  1.36008
+should buy...
+-----Order placed-----
+ 2020-07-13 03:26 
+ 18299  units of  USD_CAD 
+Buy:  1.35703 
+Sell:  1.36008 
+
+End of day... restarting
+2020-07-13 20:59
+Starting...
+
+2020-07-13 21:01
+EUR_USD OPEN:
+1.13429 
+
+USD_JPY OPEN:
+107.292 
+
+GBP_USD OPEN:
+1.2554 
+
+AUD_USD OPEN:
+0.694 
+
+USD_CAD OPEN:
+1.36078 
+
+EUR_JPY OPEN:
+121.7 
+
+NZD_USD OPEN:
+0.65396 
+
+NZD_USD current:  0.65292 
+ buy:  0.65311 
+ sell:  0.65494
+should buy...
+-----Order placed-----
+ 2020-07-14 00:04 
+ 39068  units of  NZD_USD 
+Buy:  0.65311 
+Sell:  0.65494 
+
+AUD_USD current:  0.69282 
+ buy:  0.69285 
+ sell:  0.69489
+should buy...
+-----Order placed-----
+ 2020-07-14 00:21 
+ 36536  units of  AUD_USD 
+Buy:  0.69285 
+Sell:  0.69489 
+
+GBP_USD current:  1.25414 
+ buy:  1.25414 
+ sell:  1.2579
+should buy...
+-----Order placed-----
+ 2020-07-14 00:24 
+ 20031  units of  GBP_USD 
+Buy:  1.25414 
+Sell:  1.2579 
+
+EUR_JPY current:  121.568 
+ buy:  121.57 
+ sell:  121.876
+should buy...
+-----Order placed-----
+ 2020-07-14 01:33 
+ 204  units of  EUR_JPY 
+Buy:  121.57 
+Sell:  121.876 
+
+USD_JPY current:  107.192 
+ buy:  107.192 
+ sell:  107.371
+should buy...
+-----Order placed-----
+ 2020-07-14 01:35 
+ 231  units of  USD_JPY 
+Buy:  107.192 
+Sell:  107.371 
+
+EUR_USD current:  1.13316 
+ buy:  1.13318 
+ sell:  1.13603
+should buy...
+-----Order placed-----
+ 2020-07-14 07:22 
+ 22062  units of  EUR_USD 
+Buy:  1.13318 
+Sell:  1.13603 
+
+End of day... restarting
+2020-07-14 20:59
+Starting...
+
+2020-07-14 21:01
+EUR_USD OPEN:
+1.14 
+
+USD_JPY OPEN:
+107.239 
+
+GBP_USD OPEN:
+1.25531 
+
+AUD_USD OPEN:
+0.69766 
+
+USD_CAD OPEN:
+1.36158 
+
+EUR_JPY OPEN:
+122.246 
+
+NZD_USD OPEN:
+0.65312 
 
 Traceback (most recent call last):
-  File "forexBOT.py", line 94, in <module>
+  File "forexBOT.py", line 101, in <module>
     main()
-  File "forexBOT.py", line 90, in main
+  File "forexBOT.py", line 97, in main
     schedule.run_pending()
   File "/home/ec2-user/.local/lib/python3.7/site-packages/schedule/__init__.py", line 563, in run_pending
     default_scheduler.run_pending()
   File "/home/ec2-user/.local/lib/python3.7/site-packages/schedule/__init__.py", line 94, in run_pending
     self._run_job(job)
-  File "/home/ec2-user/.local/lib/python3.7/site-packages/schedule/__Starting...
-EUR_USD OPEN:
-1.11822 
-
-USD_JPY OPEN:
-106.802 
-
-GBP_USD OPEN:
-1.23458 
-
-AUD_USD OPEN:
-0.6812 
-
-USD_CAD OPEN:
-1.36136 
-
-EUR_JPY OPEN:
-119.462 
-
-NZD_USD OPEN:
-0.63832 
-
-End of day... restarting
-Starting...
-EUR_USD OPEN:
-1.12614 
-
-USD_JPY OPEN:
-106.906 
-
-GBP_USD OPEN:
-1.24701 
-
-AUD_USD OPEN:
-0.69088 
-
-USD_CAD OPEN:
-1.35222 
-
-EUR_JPY OPEN:
-120.394 
-
-NZD_USD OPEN:
-0.64798 
-
-End of day... restarting
-ite-packages/oandapyV20/oandapyV20.py", line 306, in request
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/schedule/__init__.py", line 147, in _run_job
+    ret = job.run()
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/schedule/__init__.py", line 466, in run
+    ret = self.job_func()
+  File "forexBOT.py", line 60, in bot
+    currPrice = round(GET_CURRENT_PRICE(instrument), precision)
+  File "/home/ec2-user/forexAPI.py", line 90, in GET_CURRENT_PRICE
+    data = api.request(req)
+  File "/home/ec2-user/.local/lib/python3.7/site-packages/oandapyV20/oandapyV20.py", line 306, in request
     request_args, headers=headers)
   File "/home/ec2-user/.local/lib/python3.7/site-packages/oandapyV20/oandapyV20.py", line 243, in __request
     response.content.decode('utf-8'))
@@ -97,7 +623,7 @@ oandapyV20.exceptions.V20Error: <!DOCTYPE html>
 <head>
 <meta http-equiv="refresh" content="0">
 
-<title>api-fxpractice.oanda.com | 520: Web server is returning an unknown error</title>
+<title>api-fxpractice.oanda.com | 504: Gateway time-out</title>
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
@@ -121,10 +647,10 @@ oandapyV20.exceptions.V20Error: <!DOCTYPE html>
             <h1>
               
               <span class="cf-error-type">Error</span>
-              <span class="cf-error-code">520</span>
-              <small class="heading-ray-id">Ray ID: 5a60830a3d9aea1c &bull; 2020-06-19 21:59:31 UTC</small>
+              <span class="cf-error-code">504</span>
+              <small class="heading-ray-id">Ray ID: 5b2e760cae9bcecc &bull; 2020-07-14 21:50:50 UTC</small>
             </h1>
-            <h2 class="cf-subheadline">Web server is returning an unknown error</h2>
+            <h2 class="cf-subheadline">Gateway time-out</h2>
         </div><!-- /.error-overview -->
         
         <div class="cf-section cf-highlight cf-status-display">
@@ -170,16 +696,12 @@ oandapyV20.exceptions.V20Error: <!DOCTYPE html>
             <div class="cf-columns two">
                 <div class="cf-column">
                     <h2>What happened?</h2>
-                    <p>There is an unknown connection issue between Cloudflare and the origin web server. As a result, the web page can not be displayed.</p>
+                    <p>The web server reported a gateway time-out error.</p>
                 </div>
               
                 <div class="cf-column">
                     <h2>What can I do?</h2>
-                          <h5>If you are a visitor of this website:</h5>
-      <p>Please try again in a few minutes.</p>
-
-      <h5>If you are the owner of this website:</h5>
-      <p><span>There is an issue between Cloudflare's cache and your origin web server. Cloudflare monitors for these errors and automatically investigates the cause. To help support the investigation, you can pull the corresponding error log from your web server and submit it our support team.  Please include the Ray ID (which is at the bottom of this error page).</span> <a href="https://support.cloudflare.com/hc/en-us/articles/200171936-Error-520">Additional troubleshooting resources</a>.</p>
+                    <p>Please try again in a few minutes.</p>
                 </div>
             </div>
               
@@ -187,7 +709,7 @@ oandapyV20.exceptions.V20Error: <!DOCTYPE html>
 
         <div class="cf-error-footer cf-wrapper">
   <p>
-    <span class="cf-footer-item">Cloudflare Ray ID: <strong>5a60830a3d9aea1c</strong></span>
+    <span class="cf-footer-item">Cloudflare Ray ID: <strong>5b2e760cae9bcecc</strong></span>
     <span class="cf-footer-separator">&bull;</span>
     <span class="cf-footer-item"><span>Your IP</span>: 34.229.255.133</span>
     <span class="cf-footer-separator">&bull;</span>

@@ -1,2 +1,2 @@
-- marginBot.py : change to use buy/sell limits instead of while loop
-- model.py : implement lstm network
+-test with more accounts using different ADR time periods and different buying conditions
+-check (balance-position_value) instead of marginAvailable

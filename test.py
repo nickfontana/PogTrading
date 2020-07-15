@@ -1,6 +1,13 @@
 from forexAPI import *
 
 def test():
+    
+    summary = GET_ACCOUNT_SUMMARY()['account']
+    buying_power = float(summary['marginAvailable'])
+    print(summary,'\n')
+    print(buying_power)
+    return
+    
     n=7
     averages = {
         'EUR_USD': ADR('eur', 'usd', n, 5),
