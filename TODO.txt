@@ -1,2 +1,8 @@
+**URGENT:
+fix bug resulting in small amounts of units being purchased for instruments that are displayed as higher cost/unit:
+USD/JPY
+EUR/JPY
+**
+
 -test with more accounts using different ADR time periods and different buying conditions
 -check (balance-position_value) instead of marginAvailable
