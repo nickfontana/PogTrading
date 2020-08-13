@@ -1,2 +1,0 @@
--test with more accounts using different ADR time periods and different buying conditions
--check (balance-position_value) instead of marginAvailable
