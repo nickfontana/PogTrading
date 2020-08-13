@@ -109,7 +109,7 @@ def CURRENTLY_OWNED(instrument):
 
 # places a market buy order for @units units of @instrument at price @buy
 # places a stop loss at price @sell
-def PLACE_LIMIT_ORDER(instrument, units, buy, sell):
+def PLACE_LIMIT_ORDER(instrument, units, buy, sell, stoploss):
     params = {
         "order": {
             "type": 'LIMIT',
@@ -120,6 +120,10 @@ def PLACE_LIMIT_ORDER(instrument, units, buy, sell):
                 "timeInForce": 'GTC',
                 "price": str(sell),
             },
+            "stopLossOnFill": {
+                "timeInForce": 'GTC',
+                "price": str(stoploss),
+            }
             "timeInForce": 'GTC',
             "positionFill": 'DEFAULT',
             "triggerCondition": 'DEFAULT'
