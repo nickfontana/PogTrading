@@ -1,6 +1,7 @@
 import json
 import requests
 from datetime import datetime, timedelta, timezone
+from CreateTransaction import create_transaction
 import oandapyV20
 import oandapyV20.endpoints.orders as orders
 import oandapyV20.endpoints.instruments as instruments
@@ -19,7 +20,6 @@ ACCOUNT_URL = ENDPOINT + "/v3/accounts/" + ACCOUNT_ID + "/summary"
 ORDERS_URL = ENDPOINT + "/v3/accounts/" + ACCOUNT_ID + "/orders"
 
 api = oandapyV20.API(access_token=TOKEN)
-
 
 # calculates average daily range
 # @param time_period: range of time in days
@@ -123,7 +123,7 @@ def PLACE_LIMIT_ORDER(instrument, units, buy, sell, stoploss):
             "stopLossOnFill": {
                 "timeInForce": 'GTC',
                 "price": str(stoploss),
-            }
+            },
             "timeInForce": 'GTC',
             "positionFill": 'DEFAULT',
             "triggerCondition": 'DEFAULT'
@@ -132,9 +132,14 @@ def PLACE_LIMIT_ORDER(instrument, units, buy, sell, stoploss):
     req = orders.OrderCreate(accountID=ACCOUNT_ID, data=params)
     api.request(req)
     date = datetime.now().strftime("%Y-%m-%d %H:%M")
+    print(units)
+    print(buy)
+    print('-----------')
+    create_transaction(str(date), instrument, buy, sell, stoploss, units)
     print("-----Order placed-----\n",str(date),"\n",str(units)," units of ",str(instrument),"\nBuy: ",str(buy),"\nSell: ",str(sell),"\n")
 
 
 if __name__ == '__main__':
-    print(ADR('eur', 'usd', 3, 5))
+    PLACE_LIMIT_ORDER('EUR_USD', 1, 1.0, 1.01, 0.99)
+    #print(ADR('eur', 'usd', 3, 5))
     #print(GET_RECENT_OPEN("EUR_JPY"))
