@@ -129,8 +129,15 @@ def PLACE_LIMIT_ORDER(instrument, units, buy, sell, stoploss):
             "triggerCondition": 'DEFAULT'
         }
      }
-    req = orders.OrderCreate(accountID=ACCOUNT_ID, data=params)
-    api.request(req)
+
+    try:
+        req = orders.OrderCreate(accountID=ACCOUNT_ID, data=params)
+        api.request(req)
+    except Exception as e:
+        print("Got %s error %s, retrying" % (type(e).__name__, e))
+        time.sleep(10)
+        req = orders.OrderCreate(accountID=ACCOUNT_ID, data=params)
+        api.request(req)
     date = datetime.now().strftime("%Y-%m-%d %H:%M")
     print(units)
     print(buy)
