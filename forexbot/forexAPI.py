@@ -37,8 +37,14 @@ def ADR(base, quote, time_period, precision):
         "to": end,
         "price": 'M'
     }
-    req = instruments.InstrumentsCandles(instrument=instrumentName, params=params)
-    data = api.request(req)
+    try:
+        req = instruments.InstrumentsCandles(instrument=instrumentName, params=params)
+        data = api.request(req)
+    except Exception as e:
+        print("Got %s error %s, retrying" % (type(e).__name__, e))
+        time.sleep(10)
+        req = instruments.InstrumentsCandles(instrument=instrumentName, params=params)
+        data = api.request(req)
     candles = data['candles']
     total_change, high_change, low_change = 0, 0, 0
     #@TODO: fix recent_open (daily candles that aren't complete aren't included)
@@ -86,15 +92,27 @@ def GET_CURRENT_PRICE(instrument):
         "price": "M",
         "count": 1
     }
-    req = instruments.InstrumentsCandles(instrument=instrument, params=params)
-    data = api.request(req)
+    try:
+        req = instruments.InstrumentsCandles(instrument=instrument, params=params)
+        data = api.request(req)
+    except Exception as e:
+        print("Got %s error %s, retrying" % (type(e).__name__, e))
+        time.sleep(10)
+        req = instruments.InstrumentsCandles(instrument=instrument, params=params)
+        data = api.request(req)
     price = data['candles'][0]['mid']['o']
     return float(price)
 
 
 def GET_ACCOUNT_SUMMARY():
-    req = account.AccountSummary(accountID=ACCOUNT_ID)
-    summary = api.request(req)
+    try:
+        req = account.AccountSummary(accountID=ACCOUNT_ID)
+        summary = api.request(req)
+    except Exception as e:
+        print("Got %s error %s, retrying" % (type(e).__name__, e))
+        time.sleep(10)
+        req = account.AccountSummary(accountID=ACCOUNT_ID)
+        summary = api.request(req)
     return summary
 
 
