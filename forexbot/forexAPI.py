@@ -78,8 +78,14 @@ def GET_RECENT_OPEN(instrument):
         "price": "M",
         "count": 1,
     }
-    req = instruments.InstrumentsCandles(instrument=instrument, params=params)
-    data = api.request(req)
+    try:
+        req = instruments.InstrumentsCandles(instrument=instrument, params=params)
+        data = api.request(req)
+    except Exception as e:
+        print("Got %s error %s, retrying" % (type(e).__name__, e))
+        time.sleep(10)
+        req = instruments.InstrumentsCandles(instrument=instrument, params=params)
+        data = api.request(req)
     return float(data['candles'][0]['mid']['o'])
 
 def GET_CURRENT_PRICE(instrument):
