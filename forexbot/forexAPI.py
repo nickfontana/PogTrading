@@ -1,5 +1,6 @@
 import json
 import requests
+import time
 from datetime import datetime, timedelta, timezone
 from CreateTransaction import create_transaction
 import oandapyV20
@@ -171,6 +172,7 @@ def PLACE_LIMIT_ORDER(instrument, units, buy, sell, stoploss):
 
 
 if __name__ == '__main__':
-    PLACE_LIMIT_ORDER('EUR_USD', 1, 1.0, 1.01, 0.99)
+    time.sleep(10)
+    #PLACE_LIMIT_ORDER('EUR_USD', 1, 1.0, 1.01, 0.99)
     #print(ADR('eur', 'usd', 3, 5))
     #print(GET_RECENT_OPEN("EUR_JPY"))
