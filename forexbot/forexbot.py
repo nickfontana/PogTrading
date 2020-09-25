@@ -58,9 +58,9 @@ def bot():
             precision = averages[instrument]['precision']
             todays_open = round(averages[instrument]['todays_open'], precision)
             currPrice = round(GET_CURRENT_PRICE(instrument), precision)
-            sell_point = round(todays_open*(1+(0.5*averages[instrument]['avg_high'])), precision)
+            sell_point = round(todays_open*(1+(0.25*averages[instrument]['avg_high'])), precision)
             buy_point = round(todays_open*(1-(0.5*averages[instrument]['avg_low'])), precision)
-            stop_loss = round(todays_open*(1-(2*averages[instrument]['avg_low'])), precision)
+            stop_loss = round(todays_open*(1-(averages[instrument]['avg_low'])), precision)
             if currPrice <= buy_point:
                 #if not CURRENTLY_OWNED(instrument):
                 units = int((buying_power/4)/currPrice)
